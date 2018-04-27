@@ -32,9 +32,9 @@ def random_col(board):
 ship_row = random_row(board)
 ship_col = random_col(board)
 ship2_row = random_row(board)
-ship2_row != ship_row
+var = ship2_row != ship_row
 ship2_col = random_col(board)
-ship2_col != ship_col
+var2 = ship2_col != ship_col
 
 # print("First ship:", ship_row, ship_col)
 # print("Second ship:", ship2_row, ship2_col, "\n")
@@ -50,26 +50,28 @@ for turn in range(1, 11):
     guess_row = int(input("Guess row: "))
     guess_col = int(input("Guess col: "))
 
-    if len(shots) == 1:
-        print()
-        board[guess_row][guess_col] = "X"
-        print_board(board)
-        print("\nWINNER!!!")
-        break
-    elif guess_row == ship_row and guess_col == ship_col:
+    if guess_row == ship_row and guess_col == ship_col:
         print("\nCongratulations! You sunk my first battleship!\n")
         board[guess_row][guess_col] = "X"
         print_board(board)
         shots.append(1)
+        if shots == [2, 1]:
+            print()
+            print("\nWINNER!!!")
+            break
     elif guess_row == ship2_row and guess_col == ship2_col:
         print("\nCongratulations! You sunk my second battleship!\n")
         board[guess_row][guess_col] = "X"
         print_board(board)
         shots.append(2)
+        if shots == [1, 2]:
+            print()
+            print("\nWINNER!!!")
+            break
     else:
         if (guess_row < 0 or guess_row > 6) or (guess_col < 0 or guess_col > 6):
             print("\nOops, that's not even in the ocean.\n")
-        elif (board[guess_row][guess_col] == "-"):
+        elif board[guess_row][guess_col] == "-":
             print("\nYou guessed that one already.\n")
             print_board(board)
         else:
