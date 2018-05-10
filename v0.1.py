@@ -39,7 +39,7 @@ var2 = ship2_col != ship_col
 # print("First ship:", ship_row, ship_col)
 # print("Second ship:", ship2_row, ship2_col, "\n")
 print("Welcome to battleship game.\nA ship's size is only one character")
-print("Try to guess rows and columns from 0 to 6.")
+print("Try to guess rows and columns from 1 to 7.")
 print("\nThere are ten turns and two ships. Good luck!")
 
 # Everything from here on should go in your for loop!
