@@ -47,8 +47,8 @@ print("\nThere are ten turns and two ships. Good luck!")
 for turn in range(1, 11):
     print("\nTurn", turn)
 
-    guess_row = int(input("Guess row: "))
-    guess_col = int(input("Guess col: "))
+    guess_row = int(input("Guess row: ")) - 1
+    guess_col = int(input("Guess col: ")) - 1
 
     if guess_row == ship_row and guess_col == ship_col:
         print("\nCongratulations! You sunk my first battleship!\n")
